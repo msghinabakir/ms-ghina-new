@@ -29,8 +29,8 @@ h1, h2, h3 {
 }
 /* اللوغو */
 .logo{
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -49,7 +49,7 @@ h1, h2, h3 {
 
 /* المنيو */
 .menu-toggle{
-  font-size: 34px;
+  font-size: 30px;
   color: #222;
   cursor: pointer;
 
