@@ -314,47 +314,52 @@ document.addEventListener("click", (e) => {
 });
 
 /* ================= slides ================= */
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
 const titles = [
   "MONITORS",
   "LAPTOPS",
   "ACCESSORIES"
 ];
+
 const texts = [
   "Sharp visuals, better productivity",
   "Fast performance for your work",
   "Everything you need for setup"
 ];
-const images1 = [
-  "monitor1.png",
-  "laptop1.png",
-  "acc1.png"
-];
-const images2 = [
-  "monitor2.png",
-  "laptop2.png",
-  "acc2.png"
-];
+
+const title = document.getElementById("slideTitle");
+const text = document.getElementById("slideText");
+
 let current = 0;
-const title = document.querySelector(".hero-content h1");
-const text = document.querySelector(".hero-content p");
 
-const monitor1 = document.querySelector(".monitor1");
-const monitor2 = document.querySelector(".monitor2");
+function showSlide(index){
 
-function changeSlide(){
+  slides.forEach(slide =>{
+    slide.classList.remove("active");
+  });
+
+  dots.forEach(dot =>{
+    dot.classList.remove("active");
+  });
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+
+  title.innerHTML = titles[index];
+  text.innerHTML = texts[index];
+}
+
+function nextSlide(){
 
   current++;
 
-  if(current >= titles.length){
+  if(current >= slides.length){
     current = 0;
   }
-  title.innerHTML = titles[current];
 
-  text.innerHTML = texts[current];
-
-  monitor1.src = images1[current];
-  monitor2.src = images2[current];
-
+  showSlide(current);
 }
 
-setInterval(changeSlide, 4000);
+setInterval(nextSlide, 4000);
