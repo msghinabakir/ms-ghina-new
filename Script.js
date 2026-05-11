@@ -312,58 +312,49 @@ document.addEventListener("click", (e) => {
   }
 
 });
-/*=================== HERO SLIDER ================================*/
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
 
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
+/* ================= slides ================= */
+const titles = [
+  "MONITORS",
+  "LAPTOPS",
+  "ACCESSORIES"
+];
+const texts = [
+  "Sharp visuals, better productivity",
+  "Fast performance for your work",
+  "Everything you need for setup"
+];
+const images1 = [
+  "monitor1.png",
+  "laptop1.png",
+  "acc1.png"
+];
+const images2 = [
+  "monitor2.png",
+  "laptop2.png",
+  "acc2.png"
+];
 let current = 0;
+const title = document.querySelector(".hero-content h1");
+const text = document.querySelector(".hero-content p");
 
-function showSlide(index){
+const monitor1 = document.querySelector(".monitor1");
+const monitor2 = document.querySelector(".monitor2");
 
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
+function changeSlide(){
 
-  slides[index].classList.add("active");
-  dots[index].classList.add("active");
+  current++;
+
+  if(current >= titles.length){
+    current = 0;
+  }
+  title.innerHTML = titles[current];
+
+  text.innerHTML = texts[current];
+
+  monitor1.src = images1[current];
+  monitor2.src = images2[current];
+
 }
 
-nextBtn.addEventListener("click", () => {
-
-  current++;
-
-  if(current >= slides.length){
-    current = 0;
-  }
-
-  showSlide(current);
-
-});
-
-prevBtn.addEventListener("click", () => {
-
-  current--;
-
-  if(current < 0){
-    current = slides.length - 1;
-  }
-
-  showSlide(current);
-
-});
-
-/* autoplay */
-
-setInterval(() => {
-
-  current++;
-
-  if(current >= slides.length){
-    current = 0;
-  }
-
-  showSlide(current);
-
-}, 4000);
+setInterval(changeSlide, 4000);
