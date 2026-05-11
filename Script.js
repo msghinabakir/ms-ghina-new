@@ -290,28 +290,37 @@ window.addEventListener("click", (e) => {
 });
 
 /*=================== رأس صفحة للتلفون=================================*/
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileMenu.classList.toggle("show");
-  });
-}
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-/* يسكر إذا كبس برا المنيو */
-document.addEventListener("click", (e) => {
+  if (menuToggle && mobileMenu) {
 
-  if (
-    !mobileMenu.contains(e.target) &&
-    !menuToggle.contains(e.target)
-  ) {
-    mobileMenu.classList.remove("show");
+    menuToggle.addEventListener("click", (e) => {
+
+      e.stopPropagation();
+
+      mobileMenu.classList.toggle("show");
+
+    });
+
+    document.addEventListener("click", (e) => {
+
+      if (
+        !mobileMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ) {
+
+        mobileMenu.classList.remove("show");
+
+      }
+
+    });
+
   }
 
 });
-
 /* ================= slides ================= */
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
