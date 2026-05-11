@@ -16,12 +16,12 @@ h1, h2, h3 {
 /* HEADER DESKTOP */
 .header{
   width: 100%;
-  height: 85px;
+  height: 72px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 16px;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -37,11 +37,11 @@ h1, h2, h3 {
 
 /* الاسم بالنص */
 .site-title{
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 800;
   color: #111;
   margin: 0;
-
+letter-spacing: -0.5px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -57,14 +57,6 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
 }
-
-/* اللينكات */
-.header-links{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 /*========================= SEARCH BOX ================*/
 .search-box{
   width: 100%;
@@ -155,18 +147,6 @@ font-weight: 700;
   overflow-x: auto;
   padding: 0 20px 14px;
   background: transparent;
-}
-
-.header-links button{
-  background: transparent;
-  border: none;
-  color: #222;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 0;
-  border-radius: 0;
-  white-space: nowrap;
-  position: relative;
 }
 
 /* الخط تحت العنصر المفتوح */
@@ -362,16 +342,6 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 20px;
 }
-/* بالبداية خبّي كل الكروت */
-.salse-cards .card{
-  display: none;
-}
-
-/* بس أول كرت يظهر */
-.salse-cards .card:first-child{
-  display: block;
-}
-
 /* لما ينضاف class show-all */
 .salse-cards.show-all .card{
   display: block;
@@ -453,7 +423,7 @@ transform: translateY(-8px) ;
 
 .thumb_buy {
   width: 100%;
-  height: 240px;        /* 🔥 حجم ثابت */
+  height: 190px;        /* 🔥 حجم ثابت */
   object-fit: cover;    /* يقص بشكل مرتب */
   border-radius: 20px 20px 0 0;
   display: block;
@@ -586,16 +556,6 @@ transition: 0.4s;
 }
 .desc {
   color: #555;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: linear-gradient(to right, #4F8DFD, #3B6FEA);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
 }
 
 .modal {
@@ -1418,8 +1378,8 @@ color: #3a6ff7;
 .hero-slider{
   position: relative;
   width: 100%;
-  height: 420px;
-  border-radius: 0;
+  height: 340px;
+  border-radius: 0 0 28px 28px;
   overflow: hidden;
   background: linear-gradient(135deg,#0b3b91,#2563eb);
   box-shadow: none;
@@ -1518,648 +1478,390 @@ color: #3a6ff7;
 }
 
 }
-/* ========================================= */
+/* =========================================================================================== */
 /* MOBILE FIX */
-/* ========================================= */
+/* ========================================================================================== */
+/* ===================================================== */
+/* MOBILE CLEAN FINAL */
+/* ===================================================== */
 
-@media (max-width: 768px) {
-  body{
-       overflow-x: hidden;
-  font-size: 15px;
-  line-height: 1.7;
+@media (max-width:768px){
+
+*{
+  -webkit-tap-highlight-color: transparent;
 }
+
+body{
+  overflow-x: hidden;
+  font-size: 14px;
+  background: #f8fafc;
+}
+
+/* ================= HEADER ================= */
 
 .header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: row; /* 🔥 هيدا المهم */
-  justify-content: space-between;
-  align-items: center;
-padding: 8px 14px;
-  min-height: 62px;
-  background: rgba(255,255,255,0.95);
+  height: 62px;
+  padding: 0 14px;
+  background: rgba(255,255,255,.96);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
-  .logo {
-   width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-    flex-shrink: 0;
-  }
 
-/* زر ☰ */
-.menu-toggle {
-  font-size: 26px;
-  cursor: pointer;
-  display: block;
-  color: #222;
+.logo{
+  width: 38px;
+  height: 38px;
 }
+
 .site-title{
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 800;
-  color: #111827;
-  flex: 1;
-  text-align: center;
-}
-/* القائمة */
-.header-links{
-  position: absolute;
-  top: 62px;
-  right: 6px;
-flex-direction: column;
-  width: 185px;
-  display: none !important;
-  align-items: center;
-  gap: 4px;
-  padding: 12px;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.08);
-  z-index: 999;
-  animation: menuFade .25s ease;
-}
-.header-links.show {
-  display: flex !important;
 }
 
-.header-links button{
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: .2s;
+.menu-toggle{
+  font-size: 25px;
 }
+
+/* ================= MENU ================= */
+
+.header-links{
+  position: fixed;
+  top: 70px;
+  right: 12px;
+  width: 190px;
+  background: rgba(255,255,255,.98);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.header-links.show{
+  display: flex;
+}
+
+.header-links button,
 .header-links a{
   width: 100%;
-  text-align: center;
-  padding: 10px;
-  font-size: 15px;
-  color: #444;
-  font-weight: 500;
-  border-radius: 12px;
-}
-  .btn-button{
-    min-width: 90px;
-    height: 38px;
-    font-size: 14px;
-    border-radius: 14px;
-    padding: 0 18px;
-  }
-.landing-page {
+  height: 42px;
+  border-radius: 14px;
   display: flex;
-  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  direction: rtl;
- padding: 25px 20px 35px;
-  gap: 22px;
-  border-radius: 0 0 35px 35px;
-}
-    .hero-title{
-    font-size: 20px; /* لكل احتياجاتك التقنية */
-    font-weight: 800;
-        text-align: center;
-    line-height: 1.4;
-  }
-
-  .hero-title .blue{
-    font-size: 30px; /* منصة متكاملة */
-    font-weight: 800;
-    color: #3b82f6;
-    display: block;
-      margin-bottom: 10px;
-    margin: 8px 0;
-  }
-  .hero-desc{
-  margin-top: 15px;
-  margin-bottom: 5px;/* نص لتحت */
   font-size: 14px;
-      line-height: 1.7;
-  font-weight: 600;
-  color: #555;
 }
-.welcome-text{
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 12px;
-  font-weight: 500;
+
+.btn-button{
+  width: 100%;
+  height: 42px;
+  border-radius: 14px;
+  font-size: 14px;
 }
+
+/* ================= SEARCH ================= */
+
+.search-box{
+  padding: 10px 12px;
+}
+
+.search-box input{
+  height: 42px;
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 0 16px;
+}
+
+/* ================= HERO ================= */
+
+.landing-page{
+  flex-direction: column-reverse;
+  text-align: center;
+  padding: 10px 14px 30px;
+  gap: 20px;
+  border-radius: 0 0 34px 34px;
+}
+
 .landing-page h1{
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 24px;
-  line-height: 1.35;
+  font-size: 23px;
+  line-height: 1.5;
   margin: 0;
-  font-weight: 800;
-  color: #111827;
 }
 
 .highlight{
-  font-size: 30px;
-  margin: 0;
-}
-.landing-page span{
-  font-size: 15px;
-}
- .hero-list{
-  list-style: none;
-  margin: 15px 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-end;
-  text-align: right;
+  font-size: 31px;
+  line-height: 1.4;
 }
 
-.hero-list li{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  font-size: 12px !important;  /* قائمة لتحت */
-  font-weight: 500;
-  line-height: 1.5;
-  color: #666;
-  width: 100%;
-}
-/* ========================= */
-/* HERO BUTTONS NEW STYLE */
-/* ========================= */
-
-.hero-buttons{
-  display: flex;
-  align-items: center;
-  gap: 22px;
-
-  overflow-x: auto;
-  padding: 8px 5px 14px;
-
-  margin-top: 28px;
-
-  scrollbar-width: none;
-}
-
-.hero-buttons::-webkit-scrollbar{
-  display: none;
-}
-
-/* شكل الزر */
-.hero-buttons .btn-main{
-  background: transparent;
-  border: none;
-  box-shadow: none;
-
-  color: #222;
-  font-size: 18px;
-  font-weight: 700;
-
-  min-width: auto;
-  height: auto;
-  padding: 0 0 10px;
-
-  border-radius: 0;
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  white-space: nowrap;
-}
-
-/* شيل تأثير hover القديم */
-.hero-buttons .btn-main:hover{
-  transform: none;
-  background: transparent;
-}
-
-/* الخط لتحت */
-.hero-buttons .btn-main::after{
-  content: "";
-  position: absolute;
-
-  bottom: 0;
-  left: 0;
-
-  width: 0%;
-  height: 3px;
-
-  background: #3B6FEA;
-  border-radius: 20px;
-
-  transition: 0.3s;
-}
-
-/* الزر الفعال */
-.hero-buttons .btn-main.active{
-  color: #3B6FEA;
-}
-
-.hero-buttons .btn-main.active::after{
-  width: 100%;
-}
-
-
-  .landing-page-images-container img {
-    max-width: 100%;
-    border-radius: 25px;
-  }
-
-.landing-page-Search {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 35px;
-  padding: 8px;
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-  .landing-page-Search input {
-    width: 100%;
-    font-size: 16px;
-  }
-
- .landing-page-Search button {
-  background: linear-gradient(135deg, #4F8DFD, #3B6FEA);
-  color: white;
-  border: none;
-  width: 90px;
-  height: 48px;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(59,111,234,0.25);
-}
-
-  .salse-container {
-    padding: 30px 8px;
-  }
-
-  .salse-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    width: 100%;
-  }
-  /* السعر */
-.price-acc{
-  font-size: 40px !important;
-  font-weight: 800;
-    border-radius: 22px;
-  padding-top: 0;
-  color: #22c55e;
-}
-  /* الصورة */
-.thumb_buy{
-  height: 155px;
-  border-radius: 22px 22px 0 0;
-}
-  .service-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .service-item img {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .full-content {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .left-side,
-  .right-side {
-    width: 100%;
-  }
-
-  .main-img {
-    height: auto;
-  }
-
-  .course-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .course-item img {
-    width: 100%;
-    max-width: 250px;
-  }
-
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-/* تنعيم الخط */
-.landing-page h1{
-  line-height: 1.3;
-  letter-spacing: -0.5px;
-}
-
-.hero-list li{
-  line-height: 1.5;
-  letter-spacing: -0.2px;
-  font-size: 16px;
-}
-/* عنوان المنتج */
-.card-name h3{
-  line-height: 1.3;
-  letter-spacing: -0.4px;
-  margin: 2px 0;
-    font-size: 18px;
-  font-weight: 700;
-}
-
-/* تعديل الهيدر تبع العروضات */
-.salse-header{
-  direction: rtl;
-  z-index: 100;
-  background: #f8fafc;
-  padding: 5px 14px;
-  margin-bottom: 14px;
-  width: 100%;
-     display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.salse-title{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-}
-
-.salse-container span{
-  display: block;
-  text-align: right;
-  margin-bottom: 5px;
-  font-size: 12px;
-}
-/* الهيدر تبع القسم */
-  .salse-header h3{
-    font-size: 20px;
-  }
-/* زر عرض المزيد */
-#viewAllBtn{
-  min-width: 78px;
-  height: 34px;
-  padding: 0 12px;
-  border-radius: 12px;
+.hero-desc{
   font-size: 13px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0; /* 🔥 كان عامل نزول */
-}
- .product-modal{
-    align-items: flex-start;
-    padding: 0;
-  }
-
-  .product-modal-content{
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    border-radius: 0;
-  }
-
-  #modal-img{
-    height: 220px;
-    padding: 10px;
-    object-fit: contain;
-  }
-
-  .modal-body{
-    padding: 18px;
-  }
-
-  #modal-title{
-    font-size: 18px;
-  }
-
-  #modal-desc{
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  .whatsapp-btn{
-    width: 100%;
-    border-radius: 16px;
-  }
-section{
-  scroll-margin-top: 100px;
+  line-height: 1.9;
+  margin-top: 10px;
 }
 
-.search-box{
-  padding: 8px 14px;
-}
-.search-box input{
-  height: 40px;
-  border-radius: 16px;
-  font-size: 14px;
-  padding: 0 18px;
-}
+/* ================= SLIDER ================= */
 
-/* ============================================================================== */
-/* HERO SLIDER MOBILE */
-/* ================================================================================= */
 .hero-slider{
-  position: relative;
-
   width: 100%;
-  height: 520px;
-
+  height: 360px;
+  border-radius: 24px;
   overflow: hidden;
-
-  border-radius: 0 0 35px 35px;
-
-  background:
-  linear-gradient(
-  to bottom,
-  #0d47ff,
-  #001a70);
-}
-
-
-/* السلايدات */
-.slides{
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.slide{
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  opacity: 0;
-
-  transition: 1s;
-}
-
-.slide.active{
-  opacity: 1;
+  background: linear-gradient(135deg,#0b3b91,#2563eb);
 }
 
 .slide img{
   width: 100%;
   height: 100%;
-
   object-fit: cover;
+  padding: 0px;
 }
 
-
-/* النص */
-.hero-content{
-  position: absolute;
-
-  top: 60px;
-  left: 25px;
-
-  z-index: 2;
-}
-
-.hero-content h1{
-  color: white;
-  font-size: 50px;
-  font-weight: 800;
-}
-
-.hero-content p{
-  color: white;
-  font-size: 20px;
-  line-height: 1.6;
-
-  margin: 20px 0;
-}
-
-.hero-content button{
-  background: #1f1f1f;
-  color: white;
-
+.prev,
+.next{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   border: none;
-
-  padding: 16px 32px;
-
-  border-radius: 50px;
-
+  background: rgba(0,0,0,.35);
+  color: white;
   font-size: 20px;
-  font-weight: bold;
 }
 
+.prev{
+  left: 8px;
+}
 
-/* النقاط */
+.next{
+  right: 8px;
+}
+
 .dots{
-  position: absolute;
-
-  bottom: 25px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-  gap: 10px;
-
-  z-index: 5;
+  bottom: 14px;
 }
 
 .dot{
-  width: 12px;
-  height: 12px;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,.5);
-
-  transition: .3s;
+  width: 9px;
+  height: 9px;
 }
 
-.dot.active{
-  background: white;
-  transform: scale(1.3);
-}
-/* الحركة */
-@keyframes float{
+/* ================= SECTIONS ================= */
 
-  0%{
-    transform: translateY(0px);
-  }
-
-  50%{
-    transform: translateY(-12px);
-  }
-
-  100%{
-    transform: translateY(0px);
-  }
-
+.salse-container{
+  padding: 24px 12px;
 }
 
-
-
-/* موبايل */
-@media(max-width:768px){
-
-  .hero-slider{
-    min-height: 600px;
-    padding: 30px 15px;
-  }
-
-  .hero-content h1{
-    font-size: 44px;
-  }
-
-  .hero-content p{
-    font-size: 18px;
-  }
-
-  .monitor1{
-    width: 210px;
-    left: 0;
-  }
-
-  .monitor2{
-    width: 150px;
-    right: 0;
-  }
-
+.salse-header{
+  margin-bottom: 14px;
 }
-@keyframes menuFade {
-  from {
-    opacity: 0;
-    transform: translateY(-15px) scale(0.95);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.salse-header h1{
+  font-size: 21px;
+  margin-bottom: 0;
+}
+
+.salse-cards{
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card{
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.thumb_buy{
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-info-buy{
+  padding: 14px;
+}
+
+.card-name h3{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.card-name p{
+  font-size: 12px;
+}
+
+.buy-btn{
+  width: 100%;
+  height: 42px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.price-acc{
+  font-size: 34px !important;
+}
+
+/* ================= VIEW MORE ================= */
+
+#viewAllBtn{
+  min-width: 82px;
+  height: 34px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* ================= PRODUCT MODAL ================= */
+
+.product-modal{
+  padding: 0;
+  align-items: flex-start;
+}
+
+.product-modal-content{
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  max-height: 100vh;
+}
+
+#modal-img{
+  height: 230px;
+  padding: 14px;
+}
+
+.modal-body{
+  padding: 18px;
+}
+
+#modal-title{
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+#modal-desc{
+  font-size: 14px;
+  line-height: 2;
+}
+
+.product-modal-close{
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 10px;
+}
+
+/* ================= WHATSAPP BUTTON ================= */
+
+.whatsapp-btn{
+  width: 100%;
+  height: 48px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+/* ================= MODALS ================= */
+
+.modal-content,
+.button-modal-content,
+.contact-content{
+  width: 92%;
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.modal-content h1,
+.button-modal-content h2{
+  font-size: 24px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.button-modal-content input{
+  font-size: 14px;
+}
+
+.send-btn{
+  width: 100%;
+}
+
+/* ================= FULL MODAL ================= */
+
+.full-content{
+  flex-direction: column;
+  padding: 16px;
+  gap: 20px;
+}
+
+.left-side,
+.right-side{
+  width: 100%;
+}
+
+.main-img{
+  height: 280px;
+  padding: 16px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+  padding: 25px 14px;
+}
+
+.services h1{
+  font-size: 24px;
+}
+
+.service-item{
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+
+.service-item img{
+  width: 100%;
+  height: 200px;
+}
+
+/* ================= COURSE ================= */
+
+.course-item{
+  flex-direction: column;
+  text-align: center;
+}
+
+.course-item img{
+  width: 100%;
+}
+
+.course-content{
+  padding: 70px 16px 20px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid{
+  grid-template-columns: 1fr;
+  padding: 70px 14px 20px;
+  gap: 18px;
+}
+
+.gallery-card img{
+  height: 220px;
+}
+
+/* ================= CLOSE BUTTONS ================= */
+
+.close-full,
+.gallery-close{
+  top: 12px;
+  right: 14px;
+}
+
+/* ================= ANIMATION ================= */
+
+.card,
+.buy-btn,
+.whatsapp-btn,
+.btn-button{
+  transition: .25s;
+}
+
 }
