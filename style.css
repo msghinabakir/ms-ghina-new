@@ -1531,10 +1531,11 @@ padding: 8px 14px;
   color: #222;
 }
 .site-title{
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800;
   color: #111827;
-  margin: 0;
+  flex: 1;
+  text-align: center;
 }
 /* القائمة */
 .header-links{
@@ -1907,13 +1908,23 @@ section{
   background: rgba(0,0,0,0.35);
 }
 .hero-slider{
-  height: 250px;
-  border-radius: 0 0 25px 25px;
+ height: 620px;
+  border-radius: 0 0 38px 38px;
 }
-
+.search-box{
+  padding: 8px 14px;
+}
+.search-box input{
+  height: 44px;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 0 18px;
+}
 .slide img{
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.08);
 }
 @keyframes menuFade {
   from {
