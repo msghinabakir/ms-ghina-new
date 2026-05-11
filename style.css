@@ -1986,47 +1986,79 @@ section{
   padding: 0 18px;
 }
 
-/* ========================= */
+/* ============================================================================== */
 /* HERO SLIDER MOBILE */
-/* ========================= */
+/* ================================================================================= */
 .hero-slider{
-  width: 100%;
-  min-height: 520px;
+  position: relative;
 
-  background:
-  radial-gradient(circle at top,
-  #0d47ff,
-  #001b6b);
+  width: 100%;
+  height: 520px;
+
+  overflow: hidden;
 
   border-radius: 0 0 35px 35px;
 
-  padding: 40px 20px;
+  background:
+  linear-gradient(
+  to bottom,
+  #0d47ff,
+  #001a70);
+}
 
-  display: flex;
-  flex-direction: column;
 
-  overflow: hidden;
+/* السلايدات */
+.slides{
+  width: 100%;
+  height: 100%;
   position: relative;
+}
+
+.slide{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition: 1s;
+}
+
+.slide.active{
+  opacity: 1;
+}
+
+.slide img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
 
 
 /* النص */
 .hero-content{
+  position: absolute;
+
+  top: 60px;
+  left: 25px;
+
   z-index: 2;
 }
 
 .hero-content h1{
   color: white;
-  font-size: 52px;
-  margin-bottom: 10px;
+  font-size: 50px;
   font-weight: 800;
 }
 
 .hero-content p{
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.6;
-  margin-bottom: 25px;
+
+  margin: 20px 0;
 }
 
 .hero-content button{
@@ -2035,83 +2067,45 @@ section{
 
   border: none;
 
-  padding: 16px 34px;
+  padding: 16px 32px;
 
   border-radius: 50px;
 
   font-size: 20px;
   font-weight: bold;
+}
 
-  cursor: pointer;
+
+/* النقاط */
+.dots{
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 5;
+}
+
+.dot{
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.5);
 
   transition: .3s;
 }
 
-.hero-content button:hover{
-  transform: scale(1.05);
+.dot.active{
+  background: white;
+  transform: scale(1.3);
 }
-
-
-/* منطقة الصور */
-.hero-images{
-  position: relative;
-  height: 320px;
-  margin-top: 30px;
-}
-
-
-/* البلوكات */
-.box{
-  position: absolute;
-
-  background: #004cff;
-
-  border-radius: 10px;
-}
-
-.box1{
-  width: 240px;
-  height: 120px;
-
-  bottom: 0;
-  left: 20px;
-}
-
-.box2{
-  width: 170px;
-  height: 220px;
-
-  right: 10px;
-  bottom: 30px;
-}
-
-
-/* الصور */
-.monitor{
-  position: absolute;
-
-  width: 250px;
-
-  object-fit: contain;
-
-  animation: float 3s ease-in-out infinite;
-}
-
-.monitor1{
-  left: 80px;
-  bottom: 40px;
-}
-
-.monitor2{
-  right: 10px;
-  bottom: 120px;
-
-  width: 180px;
-
-  animation-delay: 1s;
-}
-
-
 /* الحركة */
 @keyframes float{
 
