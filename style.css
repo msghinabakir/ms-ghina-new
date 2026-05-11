@@ -1509,26 +1509,33 @@ color: #3a6ff7;
   flex-direction: row; /* 🔥 هيدا المهم */
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-  min-height: 70px;
+padding: 8px 14px;
+  min-height: 62px;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
-
   .logo {
-     width: 55px;
+   width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
     flex-shrink: 0;
   }
 
 /* زر ☰ */
 .menu-toggle {
-  font-size: 30px;
+  font-size: 26px;
   cursor: pointer;
   display: block;
   color: #222;
 }
-
+.site-title{
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
 /* القائمة */
 .header-links{
   position: absolute;
