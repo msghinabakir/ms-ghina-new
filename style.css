@@ -39,6 +39,29 @@ h1, h2, h3 {
 .menu-toggle{
   display: none;
 }
+/*========================= almstafid ================*/
+.top-header{
+  height: 80px;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-title{
+  font-size: 34px;
+  font-weight: 800;
+  color: #111;
+
+  margin: 0;
+
+  letter-spacing: 1px;
+}
 /*========================= SEARCH BOX ================*/
 .search-box{
   width: 100%;
