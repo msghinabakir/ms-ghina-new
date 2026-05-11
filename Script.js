@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 /* ================= slides ================= */
-const slides = document.querySelectorAll(".slide");
+/*const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
 const titles = [
@@ -369,5 +369,27 @@ function nextSlide(){
 
   showSlide(current);
 }
+*/
 
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("show");
+  });
+}
+
+/* يسكر إذا كبس برا المنيو */
+document.addEventListener("click", (e) => {
+
+  if (
+    !mobileMenu.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    mobileMenu.classList.remove("show");
+  }
+
+});
 setInterval(nextSlide, 4000);
