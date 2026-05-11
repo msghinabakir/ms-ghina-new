@@ -1595,24 +1595,16 @@ body{
   padding: 0 16px;
 }
 /* ================= MOBILE CATEGORY TABS ================= */
-/* ================= MOBILE CATEGORY TABS ================= */
-
 .category-tabs{
   width: 100%;
   display: flex;
   align-items: center;
-
-  gap: 30px;
-
+  gap: 25px;
   overflow-x: auto;
   scrollbar-width: none;
-
   padding: 20px 22px 18px;
-
   background: #fff;
-
   border-bottom: 1px solid #f1f1f1;
-
   position: relative;
 }
 
@@ -1623,20 +1615,13 @@ body{
 /* العنصر */
 .tab-item{
   position: relative;
-
   flex-shrink: 0;
-
   text-decoration: none;
-
   color: #222;
-
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 700;
-
   padding-bottom: 14px;
-
   transition: .3s ease;
-
   letter-spacing: -0.3px;
 }
 
@@ -1648,19 +1633,13 @@ body{
 /* الخط تحت */
 .tab-item.active::after{
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: 0;
-
   transform: translateX(-50%);
-
   width: 85%;
   height: 4px;
-
   border-radius: 50px;
-
   background: #211551;
 }
 
