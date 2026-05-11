@@ -112,7 +112,7 @@ document.getElementById("hardwareBtn").addEventListener("click", function () {
 function openFullModal(el) {
 
   document.getElementById("fullModal").style.display = "flex";
-
+document.body.classList.add("modal-open");
   const data = JSON.parse(el.dataset.product);
 
   const mainImage = document.getElementById("mainImage");
@@ -166,7 +166,6 @@ function closeFullModal() {
   document.body.classList.remove("modal-open");
 }
 /*===================== view all ===========================*/
-/*===================== view all ===========================*/
 
 const viewBtn = document.getElementById("viewAllBtn");
 const cardsContainer = document.querySelector(".salse-cards");
@@ -205,7 +204,7 @@ if (servicesBtn && servicesModal) {
 
 function closeServicesModal() {
   servicesModal.style.display = "none";
-  document.body.style.overflow = "auto";
+document.body.classList.remove("modal-open");
 }
 
 function goToSection(id) {
