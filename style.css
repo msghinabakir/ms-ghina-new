@@ -1406,9 +1406,9 @@ color: #3a6ff7;
 /* الصورة */
 .slide img{
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* الأسهم */
@@ -1417,19 +1417,14 @@ color: #3a6ff7;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   width: 52px;
   height: 52px;
-
   border: none;
   border-radius: 50%;
-
   background: rgba(0,0,0,0.45);
   color: white;
-
   font-size: 26px;
   cursor: pointer;
-
   z-index: 5;
   transition: .3s;
 }
@@ -1884,6 +1879,14 @@ section{
     height: 48px;
     font-size: 24px;
   }
+.hero-slider{
+  height: 500px;
+}
+
+.slide img{
+  height: 100%;
+  object-fit: cover;
+}
 @keyframes menuFade {
   from {
     opacity: 0;
