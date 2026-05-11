@@ -160,63 +160,60 @@ font-weight: 700;
   border-radius: 10px;
   background: #4F8DFD;
 }
-/*stop*/
+/*=====================================================================================*/
+/* ================= CATEGORY TABS ================= */
 
-.btn-main{
-  background: linear-gradient(135deg,#4F8DFD,#3B6FEA);
-  color: white;
-  padding: 13px 28px;
-  border: none;
-  border-radius: 18px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.25s;
-  box-shadow:
-    0 8px 20px rgba(59,111,234,0.18);
-  position: relative;
-  overflow: hidden;
-}
-.btn-main::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  top: 0;
-  left: 0;
-  transition: 0.4s;
-}
-
-.btn-main:hover::after {
+.category-tabs{
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  overflow-x: auto;
+  padding: 18px 16px;
+
+  background: white;
+
+  scrollbar-width: none;
 }
-.btn-main:hover {
-  transform: translateY(-5px) scale(1.05);
+
+.category-tabs::-webkit-scrollbar{
+  display: none;
 }
-.header-links button {
-  text-align: center;
+
+/* كل زر */
+.tab-item{
+  flex-shrink: 0;
+
+  padding: 12px 24px;
+
+  border-radius: 18px;
+
+  background: #f3f4f6;
+
   color: #222;
- padding: 10px 18px;
+
   text-decoration: none;
-  border-radius: 30px;
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  font-family: 'Tajawal', sans-serif;
-  cursor: pointer;
-  transition: 0.3s;
+
+  font-size: 15px;
   font-weight: 600;
-    white-space: nowrap;
+
+  transition: 0.3s;
 }
 
-/* hover لكل الأزرار */
-.header-links a:hover,
-.btn-outline:hover {
-  background: linear-gradient(to right, #4F8DFD, #3B6FEA);
+/* الزر المفتوح */
+.tab-item.active{
+  background: linear-gradient(to right,#4F8DFD,#3B6FEA);
   color: white;
+
+  box-shadow: 0 8px 20px rgba(59,111,234,0.18);
 }
 
+/* hover */
+.tab-item:hover{
+  transform: translateY(-2px);
+}
+/* =================================================================================================== */
 /* Sign in ثابت أزرق */
 .btn-button{
   min-width: 110px;
@@ -1581,7 +1578,19 @@ body{
   font-size: 13px;
   padding: 0 16px;
 }
+/* ================= MOBILE CATEGORY TABS ================= */
 
+.category-tabs{
+  padding: 14px 12px;
+  gap: 10px;
+}
+
+.tab-item{
+  padding: 10px 18px;
+  border-radius: 14px;
+
+  font-size: 14px;
+}
 /* ================= HERO ================= */
 
 .landing-page{
