@@ -1008,9 +1008,9 @@ color: #3a6ff7;
 /*زر الاغلاق*/
 .close-btn {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  font-size: 42px;
+   top: 15px;
+  right: 20px;
+font-size: 28px;
   cursor: pointer;
   background: transparent;
   border-radius: 0;
