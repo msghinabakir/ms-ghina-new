@@ -84,43 +84,40 @@ if (loginForm) {
 const openBtn = document.getElementById("openContact");
 const modal = document.querySelector(".contact-modal");
 const closeBtn = document.querySelector(".close-btn");
-
 if (openBtn && modal) {
-
   openBtn.onclick = function() {
     modal.style.display = "flex";
   }
-
 }
-
 if (closeBtn && modal) {
-
   closeBtn.onclick = function() {
     modal.style.display = "none";
   }
-
 }
-
-window.onclick = function(e) {
+window.addEventListener("click", function(e) {
   if (e.target === modal) {
     modal.style.display = "none";
   }
-}
-
-
+});
 /*=====================    عروضات     ===========================*/
-document.getElementById("offersBtn").addEventListener("click", function () {
-  document.getElementById("shopSection").scrollIntoView({
-    behavior: "smooth"
-  });
-});
 
-/*=====================    اكسسورات     ===========================*/
-document.getElementById("hardwareBtn").addEventListener("click", function () {
-  document.getElementById("hardware").scrollIntoView({
-    behavior: "smooth"
+const offersBtn = document.getElementById("offersBtn");
+if (offersBtn) {
+  offersBtn.addEventListener("click", function () {
+    document.getElementById("shopSection").scrollIntoView({
+      behavior: "smooth"
+    });
   });
-});
+}
+/*=====================    اكسسورات     ===========================*/
+const hardwareBtn = document.getElementById("hardwareBtn");
+if (hardwareBtn) {
+  hardwareBtn.addEventListener("click", function () {
+    document.getElementById("hardware").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+}
 /*=====================    modal     ===========================*/
 function openFullModal(el) {
 
@@ -169,11 +166,8 @@ document.body.classList.add("modal-open");
       document.getElementById("whatsappBtn").href =
         "https://wa.me/96181390018?text=مرحبا بدي استفسر عن " + item.title;
     }
-
   });
-
 }
-
 function closeFullModal() {
   document.getElementById("fullModal").style.display = "none";
   document.body.classList.remove("modal-open");
@@ -392,6 +386,4 @@ if (menuToggle && mobileMenu) {
   });
 
 }
-if (slides.length > 0) {
-  setInterval(nextSlide, 4000);
-}
+
