@@ -1547,7 +1547,7 @@ body{
 }
 /* وقت تفتح */
 .header-links.show{
-  left: 0;
+  Right: 0;
 }
 .header-links a,
 .header-links button{
