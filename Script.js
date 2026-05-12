@@ -41,7 +41,7 @@ if (closeSign) {
 const password = document.getElementById("password");
 const toggle = document.getElementById("togglePassword");
 
-if (toggle) {
+if (toggle && password) {
   toggle.addEventListener("click", () => {
 
     if (password.type === "password") {
@@ -56,36 +56,49 @@ if (toggle) {
 }
 
 /* ===== login ===== */
+const loginForm = document.getElementById("loginForm");
 
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+if (loginForm) {
 
-  e.preventDefault();
+  loginForm.addEventListener("submit", function(e) {
 
-  const email = document.getElementById("email").value.trim();
-  const passwordValue = document.getElementById("password").value.trim();
+    e.preventDefault();
 
-  console.log("Email:", email);
-  console.log("Password:", passwordValue);
+    const email = document.getElementById("email").value.trim();
+    const passwordValue = document.getElementById("password").value.trim();
 
-  if (!email || !passwordValue) {
-    alert("Please fill all fields");
-    return;
-  }
+    console.log("Email:", email);
+    console.log("Password:", passwordValue);
 
-  alert("Login successful ✅");
+    if (!email || !passwordValue) {
+      alert("Please fill all fields");
+      return;
+    }
 
-});
+    alert("Login successful ✅");
+
+  });
+
+}
 /* ================= CONTACT2 ================= */
 const openBtn = document.getElementById("openContact");
 const modal = document.querySelector(".contact-modal");
 const closeBtn = document.querySelector(".close-btn");
 
-openBtn.onclick = function() {
-  modal.style.display = "flex";
+if (openBtn && modal) {
+
+  openBtn.onclick = function() {
+    modal.style.display = "flex";
+  }
+
 }
 
-closeBtn.onclick = function() {
-  modal.style.display = "none";
+if (closeBtn && modal) {
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
 }
 
 window.onclick = function(e) {
@@ -261,22 +274,30 @@ const openGallery = document.getElementById("openGallery");
 const closeGallery = document.querySelector(".gallery-close");
 
 /* فتح */
-openGallery.addEventListener("click", () => {
+if (openGallery && galleryModal) {
 
-  galleryModal.style.display = "block";
+  openGallery.addEventListener("click", () => {
 
-  document.body.classList.add("modal-open");
+    galleryModal.style.display = "block";
 
-});
+    document.body.classList.add("modal-open");
+
+  });
+
+}
 
 /* إغلاق */
-closeGallery.addEventListener("click", () => {
+if (closeGallery && galleryModal) {
 
-  galleryModal.style.display = "none";
+  closeGallery.addEventListener("click", () => {
 
-  document.body.classList.remove("modal-open");
+    galleryModal.style.display = "none";
 
-});
+    document.body.classList.remove("modal-open");
+
+  });
+
+}
 
 /* إغلاق عند الضغط برا */
 window.addEventListener("click", (e) => {
@@ -289,40 +310,8 @@ window.addEventListener("click", (e) => {
   }
 });
 
-/*=================== رأس صفحة للتلفون=================================*/
-document.addEventListener("DOMContentLoaded", function () {
-
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuToggle && mobileMenu) {
-
-    menuToggle.addEventListener("click", (e) => {
-
-      e.stopPropagation();
-
-      mobileMenu.classList.toggle("show");
-
-    });
-
-    document.addEventListener("click", (e) => {
-
-      if (
-        !mobileMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ) {
-
-        mobileMenu.classList.remove("show");
-
-      }
-
-    });
-
-  }
-
-});
 /* ================= slides ================= */
-/*const slides = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
 const titles = [
@@ -369,8 +358,7 @@ function nextSlide(){
 
   showSlide(current);
 }
-*/
-
+/* =================  رأس صفحة للتلفون ================= */
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -380,16 +368,21 @@ if (menuToggle && mobileMenu) {
     mobileMenu.classList.toggle("show");
   });
 }
-
 /* يسكر إذا كبس برا المنيو */
-document.addEventListener("click", (e) => {
+if (menuToggle && mobileMenu) {
 
-  if (
-    !mobileMenu.contains(e.target) &&
-    !menuToggle.contains(e.target)
-  ) {
-    mobileMenu.classList.remove("show");
-  }
+  document.addEventListener("click", (e) => {
 
-});
-setInterval(nextSlide, 4000);
+    if (
+      !mobileMenu.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      mobileMenu.classList.remove("show");
+    }
+
+  });
+
+}
+if (slides.length > 0) {
+  setInterval(nextSlide, 4000);
+}
