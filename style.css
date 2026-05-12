@@ -1532,7 +1532,7 @@ body{
 .header-links{
   position: fixed;
   top: 0;
-  left: -100%;
+  right: -100%;
   width: 78%;
   height: 100vh;
   background: #fff;
@@ -1547,7 +1547,7 @@ body{
 }
 /* وقت تفتح */
 .header-links.show{
-  Right: 0;
+  right: 0;
 }
 .header-links a,
 .header-links button{
