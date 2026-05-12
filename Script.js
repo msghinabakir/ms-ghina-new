@@ -359,7 +359,7 @@ setInterval(() => {
 
   showSlide(current);
 
-}, 4000);
+}, 3000);
 
 /* =================  رأس صفحة للتلفون ================= */
 const menuToggle = document.getElementById("menuToggle");
