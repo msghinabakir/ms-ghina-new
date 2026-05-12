@@ -1555,6 +1555,7 @@ body{
   top: 70px;
   right: 12px;
   width: 190px;
+    z-index: 9999;
   background: rgba(255,255,255,.98);
   backdrop-filter: blur(18px);
   border-radius: 20px;
