@@ -1582,12 +1582,15 @@ body{
 .search-box{
   padding: 10px 12px;
 }
-
 .search-box input{
-  height: 42px;
-  border-radius: 20px;
-  font-size: 13px;
-  padding: 0 16px;
+  background: white;
+  border: none;
+    padding: 0 16px;
+   font-size: 13px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+.search-box input::placeholder{
+  color: #7b8794;
 }
 /* ================= MOBILE CATEGORY TABS ================= */
 .category-tabs{
