@@ -1552,39 +1552,38 @@ body{
 .header-links{
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 100%;
+  left: -100%;
+  width: 78%;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(255,255,255,0.97),rgba(245,247,250,0.98));
-  backdrop-filter: blur(20px);
-  padding: 95px 22px 40px;
+  background: #fff;
+  padding: 90px 24px 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  transition: .45s ease;
+  gap: 12px;
+  transition: .4s ease;
   z-index: 999999;
+  box-shadow: 10px 0 35px rgba(0,0,0,0.12);
   overflow-y: auto;
 }
 /* وقت تفتح */
 .header-links.show{
-  right: 0;
+  left: 0;
 }
-.header-links button,
-.header-links a{
+.header-links a,
+.header-links button{
   width: 100%;
-  min-height: 54px;
-  border-radius: 18px;
+  min-height: 50px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 18px;
+  padding: 0 10px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #111;
-  background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow:   0 6px 18px rgba(0,0,0,0.04);
-  transition: .3s;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
   .header-links a:hover,
 .header-links button:hover{
