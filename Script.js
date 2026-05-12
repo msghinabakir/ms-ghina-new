@@ -314,21 +314,6 @@ window.addEventListener("click", (e) => {
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
-const titles = [
-  "MONITORS",
-  "LAPTOPS",
-  "ACCESSORIES"
-];
-
-const texts = [
-  "Sharp visuals, better productivity",
-  "Fast performance for your work",
-  "Everything you need for setup"
-];
-
-const title = document.getElementById("slideTitle");
-const text = document.getElementById("slideText");
-
 let current = 0;
 
 function showSlide(index){
@@ -343,9 +328,6 @@ function showSlide(index){
 
   slides[index].classList.add("active");
   dots[index].classList.add("active");
-
-  title.innerHTML = titles[index];
-  text.innerHTML = texts[index];
 }
 
 function nextSlide(){
@@ -358,6 +340,8 @@ function nextSlide(){
 
   showSlide(current);
 }
+
+setInterval(nextSlide, 4000);
 /* =================  رأس صفحة للتلفون ================= */
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
