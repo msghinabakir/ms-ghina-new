@@ -366,10 +366,12 @@ const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
 if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mobileMenu.classList.toggle("show");
-  });
+ menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  mobileMenu.classList.toggle("show");
+  document.body.classList.toggle("modal-open");
+
+});
 }
 /* يسكر إذا كبس برا المنيو */
 if (menuToggle && mobileMenu) {
@@ -386,4 +388,14 @@ if (menuToggle && mobileMenu) {
   });
 
 }
+const mobileLinks = mobileMenu.querySelectorAll("a");
 
+mobileLinks.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("show");
+
+  });
+
+});
