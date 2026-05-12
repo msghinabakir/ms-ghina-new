@@ -310,7 +310,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-/* ================= slides ================= */
+/* ============================================== slides =============================================== */
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
@@ -341,6 +341,10 @@ function nextSlide(){
   showSlide(current);
 }
 
+/* أول صورة */
+showSlide(current);
+
+/* تحريك تلقائي */
 setInterval(nextSlide, 4000);
 /* =================  رأس صفحة للتلفون ================= */
 const menuToggle = document.getElementById("menuToggle");
