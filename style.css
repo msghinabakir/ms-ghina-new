@@ -1398,12 +1398,10 @@ color: #3a6ff7;
 .slide{
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   opacity: 0;
-  transition: opacity 0.6s ease;
+ transition: opacity .45s ease-in-out;
 }
 
 /* السلايد الفعال */
@@ -1416,8 +1414,21 @@ color: #3a6ff7;
 .slide img{
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   display: block;
+
+  /* الحركة الجديدة */
+  transform: scale(1);
+
+  transition:
+    transform 5s ease,
+    filter .6s ease;
+}
+
+/* السلايد الفعال */
+.slide.active img{
+  transform: scale(1.08);
 }
 /* الأسهم */
 .prev,
