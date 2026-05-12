@@ -382,7 +382,8 @@ if (menuToggle && mobileMenu) {
       !mobileMenu.contains(e.target) &&
       !menuToggle.contains(e.target)
     ) {
-      mobileMenu.classList.remove("show");
+    mobileMenu.classList.remove("show");
+document.body.classList.remove("modal-open");
     }
 
   });
