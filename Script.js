@@ -311,26 +311,25 @@ window.addEventListener("click", (e) => {
 });
 
 /* ============================================== slides =============================================== */
+
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
+
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
 let current = 0;
 
 function showSlide(index){
 
-  slides.forEach(slide =>{
-    slide.classList.remove("active");
-  });
-
-  dots.forEach(dot =>{
-    dot.classList.remove("active");
-  });
+  slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
 
   slides[index].classList.add("active");
   dots[index].classList.add("active");
 }
 
-function nextSlide(){
+nextBtn.addEventListener("click", () => {
 
   current++;
 
@@ -339,13 +338,35 @@ function nextSlide(){
   }
 
   showSlide(current);
-}
 
-/* أول صورة */
-showSlide(current);
+});
 
-/* تحريك تلقائي */
-setInterval(nextSlide, 4000);
+prevBtn.addEventListener("click", () => {
+
+  current--;
+
+  if(current < 0){
+    current = slides.length - 1;
+  }
+
+  showSlide(current);
+
+});
+
+/* autoplay */
+
+setInterval(() => {
+
+  current++;
+
+  if(current >= slides.length){
+    current = 0;
+  }
+
+  showSlide(current);
+
+}, 4000);
+
 /* =================  رأس صفحة للتلفون ================= */
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
