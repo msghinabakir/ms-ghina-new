@@ -399,18 +399,19 @@ if (menuToggle && mobileMenu) {
     mobileMenu.classList.remove("show");
 document.body.classList.remove("modal-open");
     }
-
   });
-
 }
 const mobileLinks = mobileMenu.querySelectorAll("a");
-
 mobileLinks.forEach(link => {
-
   link.addEventListener("click", () => {
-
     mobileMenu.classList.remove("show");
-
+    document.body.classList.remove("modal-open");
   });
-
+});
+const menuLinks = document.querySelectorAll(".header-links a, .header-links button");
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  });
 });
