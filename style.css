@@ -1385,41 +1385,45 @@ color: #3a6ff7;
   color: #4facfe;
 }
 /* ================= HERO SLIDER ================= */
+/* ===== SLIDER MAIN ===== */
 
 .hero-slider{
-  position: relative;
   width: 100%;
-  height: 520px;
+  height: 720px;
+  position: relative;
   overflow: hidden;
-  border-radius: 0 0 60px 60px;
-  background: linear-gradient(135deg,#eef3f9,#ffffff);
+
+  border-radius: 0 0 40px 40px;
+
+  background: #000;
 }
 
-/* السلايدات */
+/* كل سلايد */
 .slide{
   position: absolute;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   opacity: 0;
-  transition: opacity .6s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: opacity 0.6s ease;
 }
 
-/* السلايد المفتوح */
+/* السلايد الفعال */
 .slide.active{
   opacity: 1;
   z-index: 2;
 }
 
-/* الصور */
+/* الصورة */
 .slide img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  padding: 40px;
-}
 
+  object-fit: cover;
+  display: block;
+}
 /* الأسهم */
 .prev,
 .next{
@@ -1469,9 +1473,9 @@ color: #3a6ff7;
   background: #4F8DFD;
   transform: scale(1.2);
 }
-/* =========================================================================================== */
+/* ========================================================================================================================================= */
 /* MOBILE FIX */
-/* ========================================================================================== */
+/* =========================================================================================================================================== */
 @media (max-width:768px){
 
 *{
@@ -1670,50 +1674,78 @@ body{
 }
 
 /* ================= SLIDER ================= */
+/* ================= SLIDER ================= */
 
 .hero-slider{
   width: 100%;
-  height: 300px;
-  background: #f3f4f6;
-  padding: 18px 0 10px;
-  border-radius: 0 0 35px 35px;
+  height: 640px;
+  background: #000;
+  border-radius: 0;
   overflow: hidden;
+  position: relative;
+  padding: 0;
 }
+
+/* السلايد */
+.slide{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* الصورة */
 .slide img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 0px;
+  object-fit: cover;
+  display: block;
+  padding: 0;
 }
 
+/* الأسهم */
 .prev,
 .next{
-  width: 42px;
-  height: 42px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   border: none;
-  background: rgba(0,0,0,.35);
+  background: rgba(0,0,0,.45);
   color: white;
-  font-size: 20px;
+  font-size: 28px;
+  z-index: 10;
 }
 
 .prev{
-  left: 8px;
+  left: 14px;
 }
 
 .next{
-  right: 8px;
+  right: 14px;
 }
 
+/* الدوتس */
 .dots{
-  bottom: 14px;
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
 }
 
 .dot{
-  width: 9px;
-  height: 9px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
 }
 
+.dot.active{
+  background: white;
+  transform: scale(1.15);
+}
 /* ================= SECTIONS ================= */
 
 .salse-container{
