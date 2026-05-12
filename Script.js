@@ -118,6 +118,20 @@ if (hardwareBtn) {
     });
   });
 }
+/*=====================    دورات برمجة     ===========================*/
+const learningBtn = document.getElementById("learningBtn");
+
+if (learningBtn) {
+  learningBtn.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    document.getElementById("learning").scrollIntoView({
+      behavior: "smooth"
+    });
+
+  });
+}
 /*=====================    modal     ===========================*/
 function openFullModal(el) {
 
