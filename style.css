@@ -1593,24 +1593,29 @@ body{
 }
 
 .search-box input{
-  height: 42px;
-  padding: 0 16px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #111827;
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    #f8fbff
-  );
+height: 42px;
+border: 2px solid #bccbf7;
 
-  border: 2px solid rgba(79,141,253,0.18);
-  border-radius: 18px;
-  outline: none;
-  transition: .3s ease;
-  box-shadow:
-    0 4px 14px rgba(79,141,253,0.08),
-    inset 0 1px 2px rgba(255,255,255,0.9);
+font-size: 13px;
+padding: 0 16px;
+
+background: #ffffff;
+
+border-radius: 22px;
+
+box-shadow:
+0 6px 18px rgba(33,21,81,0.08);
+
+transition: 0.3s ease;
+}
+
+/* focus */
+.search-box input:focus{
+border-color: #211551;
+box-shadow:
+0 0 0 5px rgba(33,21,81,0.12),
+0 12px 30px rgba(33,21,81,0.14);
+
 }
 
 /* placeholder */
@@ -1619,15 +1624,7 @@ body{
   font-weight: 400;
 }
 
-/* focus */
-.search-box input:focus{
-  border-color: #4F8DFD;
-  background: #fff;
-  transform: translateY(-1px);
-  box-shadow:
-    0 0 0 4px rgba(79,141,253,0.13),
-    0 10px 24px rgba(79,141,253,0.14);
-}
+
 /* ================= MOBILE CATEGORY TABS ================= */
 .category-tabs{
   width: 100%;
