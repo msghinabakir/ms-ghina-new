@@ -1549,27 +1549,41 @@ body{
 .header-links.show{
   right: 0;
 }
+/* عناصر المنيو */
 .header-links a,
 .header-links button{
   width: 100%;
-  min-height: 50px;
-  border-radius: 14px;
+  min-height: 52px;
+
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 10px;
-  font-size: 18px;
-  font-weight: 600;
+
+  padding: 0 18px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
   color: #111;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  border: 1px solid #f1f1f1;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.04);
+
+  transition: 0.25s ease;
 }
-  .header-links a:hover,
-.header-links button:hover{
-  transform: translateX(-4px);
-  background: white;
-  color: #211551;
+
+/* وقت الضغط */
+.header-links a:active,
+.header-links button:active{
+  background: #eaf2ff;
+  color: #2563eb;
+
+  transform: scale(0.98);
 }
 .btn-button{
   width: 100%;
