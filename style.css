@@ -1120,66 +1120,116 @@ color: #3a6ff7;
 }
 
 /*======================================================================*/
-.services {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
+/* ================= SERVICES NEW STYLE ================= */
+
+.services{
+  padding: 35px 16px;
+  background: #f8fafc;
 }
 
-.services h1 {
+.services h1{
   font-size: 32px;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #111827;
+  font-weight: 800;
 }
 
-.services-desc {
-  color: #666;
-  margin-bottom: 30px;
+.services-desc{
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
 }
 
-/* كل خدمة */
-.service-item {
+/* الكرت */
+.service-item{
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 28px;
+
+  box-shadow:
+    0 10px 35px rgba(15,23,42,0.08);
+
+  border: 1px solid #eef2f7;
+
+  transition: 0.35s ease;
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+  flex-direction: column;
+  padding: 0;
+}
 
-  margin-bottom: 50px;
-  padding-bottom: 25px;
+.service-item:hover{
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 45px rgba(15,23,42,0.14);
+}
 
-  border-bottom: 1px solid #eee;
+/* الصورة */
+.service-item img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 
-  transition: 0.3s;
+  transition: 0.5s ease;
+}
+
+.service-item:hover img{
+  transform: scale(1.04);
 }
 
 /* النص */
-.service-item .text {
-  flex: 1;
+.service-item .text{
+  padding: 24px 20px;
+  text-align: center;
 }
 
-.service-item h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+/* العنوان */
+.service-item h2{
+  font-size: 28px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: #111827;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-.service-item p {
-  color: #666;
+/* الفقرات */
+.service-item p{
+  font-size: 16px;
+  line-height: 2;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+/* اللائحة */
+.service-item ul{
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+
+.service-item ul li{
   font-size: 15px;
+  color: #334155;
+  margin-bottom: 14px;
+  line-height: 1.8;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.service-item:hover {
-  transform: translateY(-5px);
-}
-/* الصورة */
-.service-item img {
-  width: 180px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.service-item:hover img {
-  transform: scale(1.05);
+/* الصح */
+.service-item ul li::before{
+  content: "✔";
+  color: #2563eb;
+  font-weight: bold;
+  margin-top: 2px;
 }
 /*===================================================================*/
 
@@ -1972,27 +2022,6 @@ box-shadow:
   padding: 16px;
 }
 
-/* ================= SERVICES ================= */
-
-.services{
-  padding: 25px 14px;
-}
-
-.services h1{
-  font-size: 24px;
-}
-
-.service-item{
-  flex-direction: column;
-  text-align: center;
-  gap: 16px;
-}
-
-.service-item img{
-  width: 100%;
-  height: 200px;
-}
-
 /* ================= COURSE ================= */
 
 .course-item{
@@ -2029,12 +2058,51 @@ box-shadow:
 }
 
 /* ================= ANIMATION ================= */
-
 .card,
 .buy-btn,
 .whatsapp-btn,
 .btn-button{
   transition: .25s;
 }
-
 }
+
+/* ================= services ================= */
+  .services{
+    padding: 28px 14px;
+  }
+
+  .services h1{
+    font-size: 27px;
+  }
+
+  .services-desc{
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .service-item{
+    border-radius: 28px;
+  }
+
+  .service-item img{
+    height: 210px;
+  }
+
+  .service-item .text{
+    padding: 22px 16px;
+  }
+
+  .service-item h2{
+    font-size: 22px;
+  }
+
+  .service-item p{
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .service-item ul li{
+    font-size: 14px;
+    text-align: left;
+  }
+
