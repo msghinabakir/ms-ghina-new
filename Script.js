@@ -275,47 +275,33 @@ function closeCourseModal() {
 }
 
 /*=================== sections-modal=================================*/
-const galleryModal = document.getElementById("galleryModal");
+document.addEventListener("DOMContentLoaded", () => {
 
-const openGallery = document.getElementById("openGallery");
+  const galleryModal =
+    document.getElementById("galleryModal");
 
-const closeGallery = document.querySelector(".gallery-close");
+  const openGallery =
+    document.getElementById("openGallery");
 
-/* فتح */
-if (openGallery && galleryModal) {
+  const closeGallery =
+    document.querySelector(".gallery-close");
 
-  openGallery.addEventListener("click", () => {
+  /* فتح */
+  openGallery.addEventListener("click", (e) => {
+
+    e.preventDefault();
 
     galleryModal.style.display = "block";
 
-    document.body.classList.add("modal-open");
-
   });
 
-}
-
-/* إغلاق */
-if (closeGallery && galleryModal) {
-
+  /* إغلاق */
   closeGallery.addEventListener("click", () => {
 
     galleryModal.style.display = "none";
 
-    document.body.classList.remove("modal-open");
-
   });
 
-}
-
-/* إغلاق عند الضغط برا */
-window.addEventListener("click", (e) => {
-
-  if(e.target === galleryModal){
-
-    galleryModal.style.display = "none";
-
-    document.body.classList.remove("modal-open");
-  }
 });
 
 /* ============================================== slides =============================================== */
