@@ -275,35 +275,31 @@ function closeCourseModal() {
 }
 
 /*=================== sections-modal=================================*/
-document.addEventListener("DOMContentLoaded", () => {
+const openGallery = document.getElementById("openGallery");
+const galleryModal = document.getElementById("galleryModal");
+const closeGallery = document.querySelector(".gallery-close");
 
-  const galleryModal = document.getElementById("galleryModal");
-  const openGallery = document.getElementById("openGallery");
-  const closeGallery = document.querySelector(".gallery-close");
+if (openGallery && galleryModal && closeGallery) {
 
-  if (openGallery && galleryModal && closeGallery) {
+  openGallery.addEventListener("click", (e) => {
+    e.preventDefault();
+    galleryModal.style.display = "block";
+    document.body.classList.add("modal-open");
+  });
 
-    openGallery.addEventListener("click", (e) => {
-      e.preventDefault();
-      galleryModal.style.display = "block";
-      document.body.classList.add("modal-open");
-    });
+  closeGallery.addEventListener("click", () => {
+    galleryModal.style.display = "none";
+    document.body.classList.remove("modal-open");
+  });
 
-    closeGallery.addEventListener("click", () => {
+  window.addEventListener("click", (e) => {
+    if (e.target === galleryModal) {
       galleryModal.style.display = "none";
       document.body.classList.remove("modal-open");
-    });
+    }
+  });
 
-    window.addEventListener("click", (e) => {
-      if (e.target === galleryModal) {
-        galleryModal.style.display = "none";
-        document.body.classList.remove("modal-open");
-      }
-    });
-
-  }
-
-});
+}
 /* =================  رأس صفحة للتلفون ================= */
 
 const menuToggle = document.getElementById("menuToggle");
@@ -426,4 +422,4 @@ if(slides.length > 0){
   }, 3000);
 
 }
-});
+
