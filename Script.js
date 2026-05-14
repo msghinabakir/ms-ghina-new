@@ -573,7 +573,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* إغلاق */
-  closeGallery.addEventListener("click", ()
+  closeGallery.addEventListener("click", () => {
+
+    galleryModal.style.display = "none";
+
+  });
+
+  /* إغلاق عند الضغط خارج النافذة */
+  window.addEventListener("click", (e) => {
+
+    if (e.target === galleryModal) {
+      galleryModal.style.display = "none";
+    }
+
+  });
+
+});
 /* ============================================== slides =============================================== */
 
 const slides = document.querySelectorAll(".slide");
