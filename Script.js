@@ -279,27 +279,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openGallery = document.getElementById("openGallery");
   const galleryModal = document.getElementById("galleryModal");
-  const closeGallery = document.querySelector(".gallery-close");
 
-  if (openGallery && galleryModal && closeGallery) {
+  if (openGallery && galleryModal) {
 
     openGallery.addEventListener("click", (e) => {
       e.preventDefault();
 
-      galleryModal.style.display = "flex"; // أفضل من block
+      galleryModal.style.display = "flex";
       document.body.classList.add("modal-open");
     });
 
-    closeGallery.addEventListener("click", () => {
-      galleryModal.style.display = "none";
-      document.body.classList.remove("modal-open");
-    });
+    // 👇 بدل querySelector
+    document.addEventListener("click", (e) => {
 
-    window.addEventListener("click", (e) => {
+      // زر الإغلاق
+      if (e.target.classList.contains("gallery-close")) {
+        galleryModal.style.display = "none";
+        document.body.classList.remove("modal-open");
+      }
+
+      // كليك خارج المودال
       if (e.target === galleryModal) {
         galleryModal.style.display = "none";
         document.body.classList.remove("modal-open");
       }
+
     });
 
   }
