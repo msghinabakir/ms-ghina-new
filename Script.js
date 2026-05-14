@@ -277,44 +277,33 @@ function closeCourseModal() {
 /*=================== sections-modal=================================*/
 document.addEventListener("DOMContentLoaded", () => {
 
-  const galleryModal =
-    document.getElementById("galleryModal");
+  const galleryModal = document.getElementById("galleryModal");
+  const openGallery = document.getElementById("openGallery");
+  const closeGallery = document.querySelector(".gallery-close");
 
-  const openGallery =
-    document.getElementById("openGallery");
+  if (openGallery && galleryModal && closeGallery) {
 
-  const closeGallery =
-    document.querySelector(".gallery-close");
+    openGallery.addEventListener("click", (e) => {
+      e.preventDefault();
+      galleryModal.style.display = "block";
+      document.body.classList.add("modal-open");
+    });
 
-  /* ======= */
- if (openGallery && galleryModal && closeGallery) {
-
-  /* فتح */
-  openGallery.addEventListener("click", (e) => {
-
-    e.preventDefault();
-
-    galleryModal.style.display = "block";
-
-  });
-
-  /* إغلاق */
-  closeGallery.addEventListener("click", () => {
-
-    galleryModal.style.display = "none";
-
-  });
-
-  /* إغلاق عند الضغط خارج النافذة */
-  window.addEventListener("click", (e) => {
-
-    if (e.target === galleryModal) {
+    closeGallery.addEventListener("click", () => {
       galleryModal.style.display = "none";
-    }
+      document.body.classList.remove("modal-open");
+    });
 
-  });
+    window.addEventListener("click", (e) => {
+      if (e.target === galleryModal) {
+        galleryModal.style.display = "none";
+        document.body.classList.remove("modal-open");
+      }
+    });
 
-}
+  }
+
+});
 /* =================  رأس صفحة للتلفون ================= */
 
 const menuToggle = document.getElementById("menuToggle");
