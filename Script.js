@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ================= SIGN IN ================= */
 
 const signBtn = document.getElementById("signBtn");
-const signModal = document.getElementById("signModall");
+const signModal = document.getElementById("signModal");
 const closeSign = document.getElementById("closeSign_button");
 
 if (signBtn) {
