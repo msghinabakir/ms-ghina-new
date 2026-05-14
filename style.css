@@ -1344,12 +1344,23 @@ color: #3a6ff7;
 /* ====================================================================================================== */
 /* GALLERY */
 /* ========================================================================================================= */
+.gallery-modal{
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  z-index: 99999;
+
+  justify-content: center;
+  align-items: center;
+}
 .gallery-grid{
   width: 100%;
   min-height: 100vh;
   background: #f3f5fb;
   padding: 80px 18px 40px;
-
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
